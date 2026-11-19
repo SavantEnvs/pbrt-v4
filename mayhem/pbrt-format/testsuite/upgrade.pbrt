@@ -1,0 +1,4 @@
+WorldBegin
+Material "matte" "color Kd" [.5 .5 .5]
+Shape "trianglemesh" "point P" [0 0 0 1 0 0 0 1 0] "integer indices" [0 1 2]
+WorldEnd

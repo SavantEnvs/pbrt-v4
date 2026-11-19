@@ -1,0 +1,9 @@
+project: savantenvs/pbrt-v4
+target: pbrt-image-pfm
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/pbrt-image-pfm/testsuite
+cmds:
+  - cmd: /mayhem/pbrt_fuzz_image_pfm @@
+    afl: true
+    timeout: 10

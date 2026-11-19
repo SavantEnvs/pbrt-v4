@@ -1,0 +1,19 @@
+LookAt 0 0 5  0 0 0   0 1 0
+Camera "perspective" "float fov" [ 45 ]
+Film "rgb" "integer xresolution" 16 "integer yresolution" 16
+Sampler "halton" "integer pixelsamples" 4
+WorldBegin
+AttributeBegin
+LightSource "point" "rgb I" [ 1 0.5 0.25 ]
+AttributeEnd
+Texture "checks" "spectrum" "checkerboard" "rgb tex1" [ 0.9 0.1 0.2 ] "rgb tex2" [0.1 0.8 0.3]
+Material "diffuse" "texture reflectance" "checks"
+MakeNamedMaterial "metal" "string type" "conductor" "spectrum eta" "metal-Cu-eta" "spectrum k" "metal-Cu-k"
+MakeNamedMedium "fog" "string type" "homogeneous" "rgb sigma_a" [0.1 0.2 0.3] "rgb sigma_s" [0.5 0.5 0.5]
+Shape "sphere" "float radius" 2.5
+NamedMaterial "metal"
+AttributeBegin
+Translate 1 0 0
+AreaLightSource "diffuse" "blackbody L" [ 5500 1 ]
+Shape "trianglemesh" "point3 P" [0 0 0 1 0 0 0 1 0] "integer indices" [0 1 2]
+AttributeEnd

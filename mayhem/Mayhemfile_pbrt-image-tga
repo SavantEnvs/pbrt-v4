@@ -1,0 +1,9 @@
+project: savantenvs/pbrt-v4
+target: pbrt-image-tga
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/pbrt-image-tga/testsuite
+cmds:
+  - cmd: /mayhem/pbrt_fuzz_image_tga @@
+    afl: true
+    timeout: 10

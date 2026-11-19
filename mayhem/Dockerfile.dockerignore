@@ -1,0 +1,4 @@
+# Keep .git and the source (incl. submodules); prune local build trees from the context.
+build-mayhem-test/
+build-mayhem-fuzz/
+src/build/

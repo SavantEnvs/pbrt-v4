@@ -1,0 +1,9 @@
+project: savantenvs/pbrt-v4
+target: pbrt-cyhair
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/pbrt-cyhair/testsuite
+cmds:
+  - cmd: /mayhem/pbrt_fuzz_cyhair @@ /dev/null
+    afl: true
+    timeout: 10

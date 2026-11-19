@@ -1,0 +1,9 @@
+project: savantenvs/pbrt-v4
+target: pbrt-image-hdr
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/pbrt-image-hdr/testsuite
+cmds:
+  - cmd: /mayhem/pbrt_fuzz_image_hdr @@
+    afl: true
+    timeout: 10
